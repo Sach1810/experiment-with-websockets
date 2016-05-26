@@ -27,17 +27,24 @@
   });
  
   
-    // function move () {
-    //   p += 10;
-    //   socket.emit('newMove', p);
+if (window.DeviceMotionEvent==undefined) {
+}
+
+window.ondevicemotion = function(event) {
+  ax = event.accelerationIncludingGravity.x
+  ay = event.accelerationIncludingGravity.y
+  az = event.accelerationIncludingGravity.z
+  rotation = event.rotationRate;
+  if (rotation != null) {
+    arAlpha = Math.round(rotation.alpha);
+    arBeta = Math.round(rotation.beta);
+    arGamma = Math.round(rotation.gamma);
+  }
+}
 
 
-    //   $(".move").css("left", p + x);
-
-    // }
-
-
-    // socket.on('moved', function(position){
-    //   p += position;
-    //   console.log(p);
-    // });
+window.ondeviceorientation = function(event) {
+  alpha = Math.round(event.alpha);
+  beta = Math.round(event.beta);
+  gamma = Math.round(event.gamma);
+}
