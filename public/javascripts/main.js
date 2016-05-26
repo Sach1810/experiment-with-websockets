@@ -48,3 +48,12 @@ window.ondeviceorientation = function(event) {
   beta = Math.round(event.beta);
   gamma = Math.round(event.gamma);
 }
+
+console.log(ax);
+console.log(ay);
+console.log(az);
+
+console.log(alpha);
+console.log(beta);
+console.log(gamma);
+
